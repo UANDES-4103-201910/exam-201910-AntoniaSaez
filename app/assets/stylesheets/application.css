@@ -63,3 +63,8 @@
   background-color: darkblue; /* Add a green color to the "active/current" link */
   color: white;
 }
+
+.page-footer {
+  background-color: lightblue;
+  overflow: hidden;
+}
