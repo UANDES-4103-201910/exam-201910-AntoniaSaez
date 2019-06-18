@@ -10,6 +10,52 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="topnav">
+     <a class="active" href="#home">Z-Mobile</a>
+     
+       <a href="#news">News</a>
+       <a href="#contact">Contact</a>
+       <a href="#about">About</a>
+       <% if user_signed_in? %>
+        <a><%= link_to(current_user.email, edit_user_registration_path ,class: "topnav") %></a>
+        <a><%= link_to('Logout', destroy_user_session_path, method: :delete , class: "topnav") %></a>
+
+      <% else %>
+        <a class="topnav" href="/users/sign_in">Sign In</a>
+        <a class="topnav" >/</a>
+        <a class="topnav" href="/users/sign_up">Sign Up</a>
+      <% end %>
+
+    </div>
+
+    <div class="secondarynavigation">
+      <a href="#" class="active">Home</a>
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+      <a href="#">Link 4</a>
+    </div>
+
+    <div class="main">
+      <center>
+      <%= yield %>
+      </center>
+    </div>
+
+    <footer class="page-footer">
+      <center>
+        <br>
+        <br>
+        <hr />
+        <div class="footer">Call center number: <a href="/"> +56912365478</a> </div>
+        <br>
+        <div class="footer">Address: <a href="/"> Unviersidad de los Andes</a> </div>
+      </center>
+      <br>
+      <br>
+    </footer>
+
+
+
   </body>
 </html>
